@@ -1,0 +1,98 @@
+// basic standards and resets
+
+* {
+    box-sizing:border-box;
+    position:relative;
+    line-height:100%;
+}
+
+body {
+    background-image:url('../images/arrowpattern.png');
+    background-size:150px 150px;
+    font-family: 'Lato';
+    color: $black;
+}
+
+.main > .container {
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    background-color:#fff;
+}
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+caption {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+}
+
+p {
+    color: $grey;
+    font-weight:400;
+}
+
+h2 {
+    font-size: 32px;
+    text-transform: lowercase;
+    color:$black;
+}
+
+h3 {
+    font-size:22px;
+    color: $black;
+    line-height:1.2;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+.main {
+    margin-top:67px;
+}
+
+.container {
+    width:100%;
+    @include screen(xl) {
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+    }
+}
+
+a {
+    text-decoration:none;
+    color:$yellow;
+
+    &.text-link {
+        color:$black;
+        transition: color .25s;
+        &::after {
+            display:inline-block;
+            content:'';
+            margin-left:7px;
+            background-image:url(../images/arrow.svg);
+            background-size:10px 11px;
+            background-repeat:no-repeat;
+            height:10px;
+            width:11px;
+        }
+
+        &:hover {
+            color:$yellow;
+        }
+    }
+}
+
+.sidebar .see-all-bar a.text-link {
+    color:#fff;
+    &:hover {
+        color:$black;
+    }
+}

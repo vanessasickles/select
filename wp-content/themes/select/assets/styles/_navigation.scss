@@ -1,0 +1,59 @@
+nav {
+    padding:10px 10px;
+    background-color: #fff;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+
+    z-index:20;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    @include screen(xl) {
+        padding:10px 0;
+    }
+    
+    .container {
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:flex-start;
+    }
+
+    .main-nav {
+        justify-self:flex-end;
+        margin-left:auto;
+    }
+
+    ul, ol {
+        list-style: none;
+        padding:0;
+        margin:0;
+
+        display:flex;
+    }
+
+    li {
+        padding:15px;
+    }
+
+    .current-menu-item {
+        color:$yellow;
+    }
+
+    .logo {
+        img {
+            height:23px;
+        }
+    }
+
+    a {
+        text-decoration:none;
+        color:inherit;
+        &:hover {
+            color: $yellow;
+            transition:.2s color;
+        }
+    }
+}

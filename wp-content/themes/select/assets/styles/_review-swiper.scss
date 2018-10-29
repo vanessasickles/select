@@ -1,0 +1,87 @@
+.review-swiper {
+    background-color:$black;
+    color:#fff;
+
+    h2 {
+        margin:auto;
+        text-align:center;
+        font-size: 32px;
+        text-transform:lowercase;
+
+        color:$green;
+
+        padding-top:30px;
+    }
+}
+
+.swiper-container {
+    width:100%;
+
+    .swiper-wrapper {
+        height:auto;
+        align-items:stretch;
+        padding:30px 0 65px 0;
+    }
+
+    .swiper-slide {
+        width:250px;
+        height:auto;
+        position:relative;
+
+        text-align:center;
+
+        transition:width .5s ease-in-out, transform .5s ease-in-out, margin-right .5s ease-in-out, font-size .5s ease-in-out;
+
+        .tile-title {
+            color:#fff;
+            font-size:14px;
+            line-height:1.2;
+            font-weight:normal;
+            
+            padding: 15px;
+            width: 100%;
+
+            text-align:left;
+        }
+        
+        img {
+            min-width:100%;
+            max-width:100%;
+            height:auto;
+
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+    }
+
+    .swiper-slide-active {
+        width: 300px;
+        transform:translateX(-25px);
+        margin-right:10px !important;
+
+        .slide-title {
+            font-size:20px;
+        }
+    }
+}
+
+.swiper-button-next, .swiper-button-prev {
+    z-index:1;
+    background-image:url('../images/arrow.svg') !important;
+}
+
+.swiper-button-prev {
+    transform: scaleX(-1);
+}
+
+.button-gradient {
+    background: linear-gradient(to right, $black 3%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 80%,$black 97%);
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+
+    z-index:1;
+
+    pointer-events:none;
+}

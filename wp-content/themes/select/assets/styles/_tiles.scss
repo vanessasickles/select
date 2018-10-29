@@ -1,0 +1,148 @@
+.tile-roll {
+    display:flex;
+    flex-wrap:wrap;
+    margin:-4px;
+}
+
+.post-tile-container {
+    flex:1;
+    padding:4px;
+
+    &.large-tile {
+        flex-basis:58%;
+    }
+
+    &.small-tile {
+        flex-basis:42%;
+    }
+}
+
+.post-tile {
+    background-color:#000;
+    height:230px;
+    flex:1;
+
+    & > img {
+    position:absolute;
+    max-height:100%;
+    max-width:100%;
+    object-fit:cover;
+    object-position:center center;
+
+    z-index:0; }
+
+    a {
+        text-decoration:none;
+        color:#fff;
+    }
+    
+}
+
+.vignette {
+    background:radial-gradient(transparent, rgba(0,0,0,.5));
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:1;
+
+    pointer-events:none;
+}
+
+.tile-title {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:20px;
+    z-index:1;
+
+    height:auto;
+
+    background-color:rgba(0,0,0,.85);
+    color:#fff;
+    font-weight:bold;
+    font-size:28px;
+
+    @include screen(md){
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+    }
+}
+
+ul.post-categories {
+        padding:0;
+        display:flex;
+        flex-wrap:wrap;
+        z-index:1;
+        margin:0;
+        margin-left:auto;
+
+    li {
+        list-style-type:none;
+        margin:5px 5px 5px 0;
+        transition: background-color .2s, color .2s ease-in-out;
+
+        font-weight:normal;
+        font-size:12px;
+
+        &:last-child {
+            margin-right:0;
+        }
+
+        &:hover a {
+            color:#fff;
+        }
+
+        a {
+            color:#fff;
+            text-decoration:none;
+            display:inline-block;
+
+        }
+    }
+
+    .text-blue a {
+        color:rgb(51, 155, 214);
+    }
+    .text-yellow a {
+        color:rgb(255, 198, 55);
+    }
+    .text-green a {
+        color:rgb(88, 197, 45);
+    }
+    .text-teal a {
+        color:rgb(43, 226, 202);
+    }
+}
+
+.post-tile-container .tile-title {
+    font-size:16px;
+}
+
+a.post-link {
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    z-index:1;
+
+    transition: opacity .2s ease-in-out;
+
+    display:block;
+
+    &:hover + img {
+        opacity:.5;
+
+        transition: opacity .2s ease-in-out;
+    }
+
+}
+
+.see-all-bar {
+    background-color:#F4F4F4;
+    padding: 15px 20px;
+    text-align:right;
+}
