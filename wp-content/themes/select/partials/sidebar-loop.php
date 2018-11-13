@@ -1,7 +1,4 @@
 <?php 
-    global $args;
-    global $query_name;
-
     $query_name = new WP_Query($args);
     while ($query_name -> have_posts()) : $query_name -> the_post(); ?>
         <?php 
@@ -15,4 +12,5 @@
     <?php 
     endwhile;
     wp_reset_postdata();
+    wp_reset_query()
 ?>

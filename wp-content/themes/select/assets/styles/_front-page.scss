@@ -7,18 +7,22 @@
         height:100%;
     }
 
-    h3 {
-        font-size:20px;
-        a {
-            text-transform:none;
-        }
+    a h3 {
+        font-size:22px;
+    }
+
+    .post-tile-container {
+        padding:0;
     }
 }
 
 .front-main {
     width:100%;
-    display:flex;
     flex:flex-wrap;
+
+    @include screen(lg) {
+        display:flex;
+    }
 
     .left-content {
         flex-basis:75%;
@@ -41,7 +45,12 @@
 
 .secondary-content {
     margin:auto;
-    width:80%;
+    width:100%;
+    padding:0 20px;
+    @include screen(lg) {
+        width:80%;
+        padding:0;
+    }
 }
 
 .sidebar-article {
@@ -64,10 +73,14 @@
     }
     
     h3 {
-        font-size:14px;
         margin-bottom:10px;
         color:#fff;
         font-weight:400;
+        font-size:18px;
+
+        @include screen(lg) {
+            font-size:14px;
+        }
     }
 
     a {
@@ -99,6 +112,12 @@
         padding: 15px 20px;
         text-align:right;
         font-size:16px;
+
+        background-image: linear-gradient(to top, #F4F4F4 50%, #A0A0A0 50%);
+
+        &:hover {
+            color: $black;
+        }
     }
 }
 
@@ -111,12 +130,17 @@
     background-image:url('../images/arrow-15.svg');
     background-repeat:no-repeat;
     background-position:90% center;
-    background-size:40%;
+    background-size:60%;
 
-    padding:5%;
+    padding:80px 60px 40px 60px;
 
-    display:flex;
-    align-items:center;
+    @include screen(lg) {
+        display:flex;
+        align-items:center;
+        background-position:90% center;
+        background-size:40%;
+        padding:5%;
+    }
 
 
     .cta-callout {
@@ -130,7 +154,7 @@
     .cta-form {
         z-index:1;
         flex-basis:50%;
-        padding:0 5%;
+        
         margin-top:25px;
 
         position:relative;
@@ -139,6 +163,16 @@
         flex-direction:column;
         align-items:center;
         justify-content:center;
+
+        @include screen(lg) {
+            padding:0 5%;
+        }
+
+        .ajax-loader {
+            background-repeat:no-repeat;
+            margin-left:auto;
+        }
+
 
         form {
             margin-bottom:0;
@@ -160,9 +194,11 @@
 
         }
 
-
         div[role=form] {
-            width:90%;
+            width:100%;
+            @include screen(lg) {
+                width:90%;
+            }
         }
 
         input[type=email] {
@@ -212,5 +248,4 @@
         margin:0;
     }
 
-    display:flex;
 }

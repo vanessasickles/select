@@ -1,17 +1,35 @@
 .archive-section {
     .header-bar {
-        margin-bottom:10px;
+        margin-bottom:30px;
     }
     
     .see-all-bar {
-        background-color:transparent;
+        background:transparent;
         padding: 35px 10px;
+
+        &:hover {
+            background: transparent;
+            color:$black;
+
+            a {
+                color:$black;
+            }
+        }
+
+        a:hover {
+            color: $yellow;
+        }
     }
 }
 
 .archive.header-bar {
     padding-left:10px;
     padding-bottom:0;
+}
+
+.archive-section .header-bar, .archive.header-bar {
+    padding-bottom:15px;
+    border-bottom: 2px solid $grey;
 }
 
 .archive-roll-container {
@@ -23,19 +41,60 @@
 }
 
 .archive-item {
-    padding:25px 10px;
+    padding:25px 0px;
     position:relative;
 
     border-bottom:1px solid #cacaca;
 
+    @include screen(md) {
+        display:flex;
+        padding:25px 10px;
+    }
+
     h3 {
         margin-bottom:5px;
+        transition:color .2s ease-in-out;
+        &:hover {
+            color: $yellow;
+            transition:color .2s ease-in-out;
+        }
+    }
+}
+
+.archive-container .tile-roll {
+    @include screen(md) {
+        .post-tile-container {
+            flex-basis:50%;
+        }
+        .post-tile-container:first-of-type {
+            flex-basis:100%;
+            
+            .post-tile {
+                height:400px;
+            }
+        }
     }
 }
 
 
 .item-thumbnail {
-    margin-right:20px;
+    margin-bottom:10px;
+
+    img {
+        object-fit:cover;
+        width:100%;
+        max-height:200px;
+        
+        @include screen(md) {
+            width:300px;
+            height:175px;
+            max-height:auto;
+        }
+    }
+
+    @include screen(md) {
+        margin-right:20px;
+    }
 }
 
 .item-content {
@@ -47,27 +106,47 @@
 }
 
 .item-byline {
-    font-size:13px;
+    font-size:15px;
     margin-bottom:10px;
+    display:flex;
+
+    @include screen(md) {
+        font-size:13px;
+    }
 
     span {
         display:inline-block;
         margin-right:25px;
     }
+
+    a {
+        transition:all .2s ease-in;
+        &:hover {
+            color:$black;
+            transition:all .2s ease-in;
+        }
+    }
 }
 
 .item-excerpt {
-    font-size:14px;
-    line-height:1.3;
+    font-size:16px;
+    line-height:1.5;
     color: $grey;
 
     flex:1;
+
+    @include screen(md) {
+        font-size:14px;
+        line-height:1.3;
+    }
 }
 
 .item-readmore {
     justify-self:end;
     align-self:end;
     margin-left:auto;
+
+    margin-top:10px;
 
     a {
         font-size:14px;

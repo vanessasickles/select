@@ -1,0 +1,1 @@
+<?php include(locate_template( 'category.php', get_post_format() )); ?>

@@ -1,6 +1,7 @@
 .review-swiper {
     background-color:$black;
     color:#fff;
+    margin-bottom:50px;
 
     h2 {
         margin:auto;
@@ -10,7 +11,11 @@
 
         color:$green;
 
-        padding-top:30px;
+        padding-top:60px;
+
+        @include screen(md) {
+            padding-top:30px;
+        }
     }
 }
 
@@ -20,7 +25,10 @@
     .swiper-wrapper {
         height:auto;
         align-items:stretch;
-        padding:30px 0 65px 0;
+        padding:30px 0 110px 0;
+        @include screen(md) {
+            padding:30px 0 65px 0;
+        }
     }
 
     .swiper-slide {
@@ -30,18 +38,29 @@
 
         text-align:center;
 
-        transition:width .5s ease-in-out, transform .5s ease-in-out, margin-right .5s ease-in-out, font-size .5s ease-in-out;
+        transition:all .25s ease-in-out;
+
+        &:hover {
+            a.tile-title {
+                color: $yellow;
+                transition: all .25s ease-in-out;
+            }
+        }
 
         .tile-title {
             color:#fff;
-            font-size:14px;
+            font-size:18px;
             line-height:1.2;
             font-weight:normal;
-            
             padding: 15px;
+            
             width: 100%;
 
             text-align:left;
+
+            @include screen(lg) {
+                font-size:14px;
+            }
         }
         
         img {

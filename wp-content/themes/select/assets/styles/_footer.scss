@@ -55,10 +55,23 @@ footer {
 
     .footer-con {
         display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+
+        @include screen(lg) {
+            display:flex;
+        }
     }
 
     .footer-col-3 {
-        width:33.33%;
+        width:50%;
+        min-width:300px;
+        flex:1;
+        margin: 20px; 
+        @include screen(lg) {
+            width:33.33%;
+            margin:0;
+        }
     }
 
     .social-media {

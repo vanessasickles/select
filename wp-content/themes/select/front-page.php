@@ -11,14 +11,7 @@
                     $post_id = get_the_ID(); ?>
 
                     <div class="feature-banner">
-                        <div class="post-tile">
-                            <a class="post-link" href="<?php get_permalink() ?>"></a>
-                            <?php the_post_thumbnail($post_id) ?>
-                            <div class="tile-title">
-                                <h3><a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title(); ?></a></h3>
-                                <?php the_category() ?>
-                            </div>
-                        </div>
+                        <?php include(locate_template( 'partials/tile-item.php', get_post_format() )); ?>
                     </div>
 
                 <?php } endif;
@@ -35,7 +28,7 @@
                         </div>
                         <div class="tile-roll">
                             <?php 
-                                $args = array('posts_per_page' => '4');
+                                $args = array('posts_per_page' => '4', 'ignore_sticky_posts' => 1);
                                 $recent_posts = $query_name;
                                     include(locate_template( 'partials/tile-loop.php', get_post_format() )); 
                             ?>
@@ -49,11 +42,11 @@
                     <!-- Feature Posts -->
                     <div class="tile-roll-block">
                         <div class="header-bar">
-                            <h2>Feature</h2>
+                            <h2>Features</h2>
                         </div>
                         <div class="tile-roll">
                             <?php 
-                                $args = array('posts_per_page' => '4', 'category_name' => 'features');
+                                $args = array('posts_per_page' => '4', 'category_name' => 'features', 'ignore_sticky_posts' => 1);
                                 $feature_posts = $query_name;
                                     include(locate_template( 'partials/tile-loop.php', get_post_format() )); 
                             ?>
@@ -72,7 +65,7 @@
 
                     <div class="sidebar-roll">
                         <?php 
-                            $args = array('posts_per_page' => '8', 'category_name' => 'news');
+                            $args = array('posts_per_page' => '7', 'category_name' => 'news', 'ignore_sticky_posts' => 1);
                             $news_posts = $query_name;
                                 include(locate_template( 'partials/sidebar-loop.php', get_post_format() )); 
                         ?>
@@ -87,7 +80,7 @@
                     </div>
                     <div class="sidebar-roll">
                         <?php 
-                            $args = array('posts_per_page' => '8', 'category_name' => 'news');
+                            $args = array('posts_per_page' => '7', 'category_name' => 'news', 'ignore_sticky_posts' => 1);
                             $spotlight_posts = $query_name;
                                 include(locate_template( 'partials/sidebar-loop.php', get_post_format() )); 
                         ?>
@@ -155,10 +148,10 @@
                     </div>
                 </div>
 
-                <!-- Analysis Posts -->
+                <!-- news Posts -->
                 <div class="archive-section">
                         <div class="header-bar">
-                            <h2>Analysis</h2>
+                            <h2>news</h2>
                         </div>
                         <div class="archive-roll-container">
                             <div class="archive-roll">

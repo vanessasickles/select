@@ -15,10 +15,17 @@ nav {
     }
     
     .container {
-        display:flex;
         flex-direction:row;
         align-items:center;
         justify-content:flex-start;
+
+        padding:14px 20px;
+
+        @include screen(md){
+            display:flex;
+            padding:0;
+        }
+
     }
 
     .main-nav {
@@ -28,14 +35,34 @@ nav {
 
     ul, ol {
         list-style: none;
-        padding:0;
+        padding:40px 0 15px 0;
         margin:0;
 
-        display:flex;
+        display:none;
+        
+
+        &.is-active {
+            display:block;
+            text-align:center;
+            height:100vh;
+            transition: all .3s;
+            padding:0;
+        }
+
+        @include screen(md) {
+            display:flex;
+            padding:0;
+        }
+        
     }
 
     li {
-        padding:15px;
+        padding-top:30px;;
+        font-size:35px;
+        @include screen(md) {
+            padding:15px;
+            font-size:16px;
+        }
     }
 
     .current-menu-item {
@@ -44,7 +71,11 @@ nav {
 
     .logo {
         img {
-            height:23px;
+            height:24px;
+
+            @include screen(md) {
+                height:23px;
+            }
         }
     }
 
@@ -55,5 +86,16 @@ nav {
             color: $yellow;
             transition:.2s color;
         }
+    }
+}
+
+.nav-expand.hamburger {
+    color:$black;
+    position:absolute;
+    top:0;
+    right:0;
+
+    @include screen(md) {
+        display:none;
     }
 }
