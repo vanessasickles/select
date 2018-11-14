@@ -6,6 +6,21 @@
     min-height:100vh;
     padding:10%;
 
+    a {
+        color:#fff;
+        text-decoration:underline;
+        margin-top:20px;
+        transition:all .2s ease-in;
+        display:block;
+
+        cursor:pointer;
+
+        &:hover {
+            color:$blue;
+            transition:all .2s ease-in;
+        }
+    }
+
     h1, h2 {
         font-size:32px;
         margin-bottom:20px;
@@ -62,6 +77,12 @@
 
     .quiz-error {
         margin:20px 0 0 0;
+    }
+
+    h3 {
+        color:#fff;
+        margin:60px 0 40px 0;
+        letter-spacing:.5px;
     }
 
     .quiz-slide, .quiz-opener, .quiz-results {
@@ -146,9 +167,11 @@
             }
         }
 
+
         .quiz-graph {
             border-left:2px solid #fff;
             border-bottom: 2px solid #fff;
+            margin-bottom:100px;
         }
 
         .quiz-bar {
@@ -174,6 +197,14 @@
             color:$black;
             margin-left:auto;
             margin-right:20px;
+        }
+
+        .bar-label {
+            color: #fff;
+            position:absolute;
+            transform:rotate(-90deg);
+
+            margin-left:-50px;
         }
     }
 }

@@ -748,6 +748,16 @@ footer {
   justify-content: center;
   min-height: 100vh;
   padding: 10%; }
+  .quiz-container a {
+    color: #fff;
+    text-decoration: underline;
+    margin-top: 20px;
+    transition: all .2s ease-in;
+    display: block;
+    cursor: pointer; }
+    .quiz-container a:hover {
+      color: #41B9FF;
+      transition: all .2s ease-in; }
   .quiz-container h1, .quiz-container h2 {
     font-size: 32px;
     margin-bottom: 20px;
@@ -789,6 +799,10 @@ footer {
         background-color: #fff; }
   .quiz-container .quiz-error {
     margin: 20px 0 0 0; }
+  .quiz-container h3 {
+    color: #fff;
+    margin: 60px 0 40px 0;
+    letter-spacing: .5px; }
   .quiz-container .quiz-slide, .quiz-container .quiz-opener, .quiz-container .quiz-results {
     text-align: center;
     margin: 200px 0;
@@ -846,7 +860,8 @@ footer {
       font-weight: 300; }
     .quiz-container .quiz-slide .quiz-graph, .quiz-container .quiz-opener .quiz-graph, .quiz-container .quiz-results .quiz-graph {
       border-left: 2px solid #fff;
-      border-bottom: 2px solid #fff; }
+      border-bottom: 2px solid #fff;
+      margin-bottom: 100px; }
     .quiz-container .quiz-slide .quiz-bar, .quiz-container .quiz-opener .quiz-bar, .quiz-container .quiz-results .quiz-bar {
       height: 50px;
       background-color: white;
@@ -862,5 +877,10 @@ footer {
       color: #3D3D3D;
       margin-left: auto;
       margin-right: 20px; }
+    .quiz-container .quiz-slide .bar-label, .quiz-container .quiz-opener .bar-label, .quiz-container .quiz-results .bar-label {
+      color: #fff;
+      position: absolute;
+      transform: rotate(-90deg);
+      margin-left: -50px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,6 +25,8 @@
                     <p><?php echo get_field('description') ?></p>
 
                     <button class="start-quiz">Take the Quiz</button>
+
+                    <a class="skip-quiz">skip to statistics</a>
                 </div>
 
                 <!-- Quiz Slides -->
@@ -39,26 +41,16 @@
                 <!-- Quiz Results -->
                 <div class="quiz-results">
                     <h2>You answered <span class="final-score"></span> of the questions correctly!</h2>
-                    <?php 
-                    if( have_rows('quiz') ):
-                        while ( have_rows('quiz') ) : the_row(); ?>
 
-                            <div class="quiz-graph">
-                                <h3><?php echo get_sub_field('graph_label'); ?></h3>
-                                <?php if( have_rows('options') ):
-                                    while ( have_rows('options') ) : the_row();
-                                        $value = get_sub_field('value'); ?>
-                            
-                                        <div class="quiz-bar">
-                                            <span class="bar-value"><?php echo $value ?>%</span>
-                                        </div>                    
-                                    <?php endwhile;
-                                endif; ?>
-                            </div>
-
-                        <?php endwhile;
-                    endif; 
-                    ?>
+                    <div class="all-statistics">
+                        <?php 
+                        if( have_rows('quiz') ):
+                            while ( have_rows('quiz') ) : the_row(); ?>
+                                <?php include(locate_template( 'partials/quiz-graph.php', get_post_format() )); ?>
+                            <?php endwhile;
+                        endif; 
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

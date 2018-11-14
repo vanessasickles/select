@@ -27,7 +27,7 @@
 
 
     // quiz functions
-    var score = 0;
+    var score = null;
     var questionQuantity = $('div.quiz-slide').length;
     var questionNumber = 0;
 
@@ -41,6 +41,7 @@
     $('button.start-quiz').on('click', startQuiz);
     function startQuiz() {
         var parent = $(this).parent();
+        var score = 0;
 
         parent.hide();
         parent.next().show();
@@ -103,6 +104,42 @@
             }, 500);
         }
     }
+    var parentOfParent = false;
+    $('a.skip-quiz').on('click', showResults);
+    function showResults(event) {
+        var eventTarget = $(event.target);
+        var eventParent = eventTarget.parent();
+
+        console.log(parentOfParent);
+
+        if(parentOfParent == true) {
+            eventParent.parent().hide();
+        } else {
+            eventParent.hide();
+        }
+
+        $('.quiz-results').show();
+
+        if(score == null) {
+            $('.quiz-results h2').html("Gaming Motivations by Gender");
+        } else {
+            var finalScore = (score/questionQuantity)*100;
+            $('.final-score').html(finalScore + '%');
+        }
+        
+        var graphBars = $('.quiz-results').find('div.quiz-bar');
+        
+        graphBars.each(function() {
+            var barValueCon = $(this).find('.bar-value');
+            var width = barValueCon.html();
+
+            $(this).animate({
+                width: width
+            }, 50, function(){});
+
+            $(this).find('.bar-value').fadeIn(1250);
+        })
+    }
     
     $('button.next-question').on('click', nextQuestion);
     function nextQuestion(event) {
@@ -119,26 +156,9 @@
             $('.quiz-marker').eq(questionNumber).toggleClass('selected');
         } else if(questionNumber>=questionQuantity) {
             $('.quiz-progress').hide();
-            eventParent.parent().hide();
+            var parentOfParent = true;
 
-
-            $('.quiz-results').show();
-            var finalScore = (score/questionQuantity)*100;
-            $('.final-score').html(finalScore + '%');
-
-            var graphBars = $('.quiz-results').find('div.quiz-bar');
-            
-            graphBars.each(function() {
-                var barValueCon = $(this).find('.bar-value');
-                var width = barValueCon.html();
-
-                $(this).animate({
-                    width: width
-                }, 50, function(){});
-
-                $(this).find('.bar-value').fadeIn(1250);
-            })
-
+            showResults(event);
         }
     }
 })}) (jQuery);
