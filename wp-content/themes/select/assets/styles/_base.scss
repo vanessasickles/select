@@ -26,6 +26,12 @@ body {
         }
     }
 
+    &.single-bg {
+        .main > .container {
+            box-shadow:none;
+        }
+    }
+
     .main > .container {
         box-shadow: 0 0 10px rgba(0,0,0,.4);
         background-color:#fff;
@@ -83,24 +89,25 @@ q:before, q:after {
 a {
     text-decoration:none;
     color:$yellow;
+}
 
-    &.text-link {
-        color:$black;
-        transition: color .25s;
-        &::after {
-            display:inline-block;
-            content:'';
-            margin-left:7px;
-            background-image:url(../images/arrow.svg);
-            background-size:10px 11px;
-            background-repeat:no-repeat;
-            height:10px;
-            width:11px;
-        }
+.text-link {
+    color:$black;
+    cursor:pointer;
+    transition: color .25s;
+    &::after {
+        display:inline-block;
+        content:'';
+        margin-left:7px;
+        background-image:url(../images/arrow.svg);
+        background-size:10px 11px;
+        background-repeat:no-repeat;
+        height:10px;
+        width:11px;
+    }
 
-        &:hover {
-            color:$yellow;
-        }
+    &:hover {
+        color:$yellow;
     }
 }
 

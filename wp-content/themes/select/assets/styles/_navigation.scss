@@ -15,22 +15,32 @@ nav {
     }
     
     .container {
-        flex-direction:row;
-        align-items:center;
-        justify-content:flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         padding:14px 20px;
 
         @include screen(md){
-            display:flex;
             padding:0;
+            flex-direction:row;
+            align-items:center;
+            justify-content:flex-start;
         }
 
     }
 
     .main-nav {
-        justify-self:flex-end;
-        margin-left:auto;
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+
+        @include screen(md) {
+            flex-direction:row;
+            align-items:center;
+            justify-self:flex-end;
+            margin-left:auto;
+        }
     }
 
     ul, ol {

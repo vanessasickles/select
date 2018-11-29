@@ -25,6 +25,30 @@
         }
 
 
+        $('.navigation-search .search-icon').on('click', searchToggle);
+        function searchToggle() {
+            if($('.search-form').hasClass('search-open')) {
+                $('.search-form').removeClass('search-open');
+                $('.search-form').animate({
+                    width: 0,
+                    opacity: 0,
+                }, 150, "swing", function() {});
+
+                $('.search-submit').animate({
+                    opacity: 0,
+                }, 100, "swing", function() {});
+            } else {
+                $('.search-form').addClass('search-open');
+                $('.search-form').animate({
+                    width: 127,
+                    opacity: 1.0
+                }, 150, "swing", function() {});
+
+                $('.search-submit').animate({
+                    opacity: 1.0,
+                }, 500, "swing", function() {});
+            }
+        }
 
     // quiz functions
     var score = null;

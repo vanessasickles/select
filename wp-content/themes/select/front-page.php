@@ -1,21 +1,24 @@
 <?php get_header(); ?>
     <div class="main">
         <div class="container">
+        <!-- Feature Banners -->
+            <div class="feature-banners">
+                <?php 
+                    if( have_rows('feature_banner') ):
+                        while ( have_rows('feature_banner') ) : the_row(); ?>
+                                <?php 
+                                $post_object = get_sub_field('featured_post');
+                                $post = $post_object;
+                                setup_postdata( $post );
+                                $post_id = get_the_ID(); 
 
-            <!-- Feature Banner -->
-            <?php 
-                $post_object = get_field('feature_banner');
-                if($post_object): {
-                    $post = $post_object;
-                    setup_postdata( $post );
-                    $post_id = get_the_ID(); ?>
-
-                    <div class="feature-banner">
-                        <?php include(locate_template( 'partials/tile-item.php', get_post_format() )); ?>
-                    </div>
-
-                <?php } endif;
-            ?>
+                                include(locate_template( 'partials/tile-item.php', get_post_format() ));
+                                    
+                            wp_reset_postdata();
+                        endwhile;
+                    endif;
+                ?>
+            </div>
 
             <div class="front-main">
                 <!-- Left Main Content -->

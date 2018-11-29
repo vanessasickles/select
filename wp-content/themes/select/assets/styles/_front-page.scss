@@ -1,16 +1,15 @@
-.feature-banner {
+.feature-banners {
     width:100%;
-    height:350px;
-
-    .post-tile {
-        width:100%;
-        height:100%;
-    }
+    display:flex;
+    flex-wrap:wrap;
 
     a h3 {
         font-size:22px;
     }
 
+    .post-tile {
+        height:400px;
+    }
     .post-tile-container {
         padding:0;
     }

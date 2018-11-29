@@ -22,10 +22,20 @@ $featured_bg_id = get_the_ID();
 $featured_bg = get_the_post_thumbnail_url($featured_bg_id, 'full');?>
 
 <body class="<?php 
-    echo (is_page_template('page-quiz.php') ? 'featured-bg' : 'default-bg')
+    if (is_page_template('page-quiz.php')) {
+        echo 'featured-bg';
+    } elseif (is_front_page()) {
+        echo 'default-bg';
+    } elseif (is_singular()) {
+        echo 'single-bg';
+    } else {
+        echo 'default-bg';
+    };
 ?>"
 style="<?php
-    echo (is_page_template('page-quiz.php') ? 'background-image:url(' . $featured_bg .')' : '')
+    if (is_page_template('page-quiz.php')): {
+        echo 'background-image:url(' . $featured_bg .')';
+    } endif;
 ?>">
     <nav>
         <div class="container">
@@ -35,7 +45,8 @@ style="<?php
                 </a>
             </div>
             <div class="main-nav">
-                <?php wp_nav_menu(array( 'theme_location' => 'main_navigation' )) ?>
+                <?php wp_nav_menu(array( 'theme_location' => 'main_navigation' ));
+                get_search_form() ?>
             </div>
 
             <button class="nav-expand hamburger hamburger--spring" type="button">
