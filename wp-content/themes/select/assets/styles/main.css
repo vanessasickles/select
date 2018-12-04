@@ -911,6 +911,15 @@ footer {
       position: absolute;
       transform: rotate(-90deg);
       margin-left: -50px; }
+  .quiz-container .quiz-article .item-byline {
+    text-align: center;
+    display: inline-block; }
+    .quiz-container .quiz-article .item-byline a {
+      display: inline; }
+  .quiz-container .quiz-article h2, .quiz-container .quiz-article h3, .quiz-container .quiz-article h4 {
+    margin-bottom: 20px; }
+  .quiz-container .quiz-article .page-content {
+    text-align: left; }
 
 .header-image {
   overflow: hidden;

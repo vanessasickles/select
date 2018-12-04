@@ -207,4 +207,23 @@
             margin-left:-50px;
         }
     }
+
+    .quiz-article {
+        .item-byline {
+            text-align:center;
+            display:inline-block;
+
+            a {
+                display:inline;
+            } 
+        }
+
+        h2, h3, h4 {
+            margin-bottom:20px;
+        }
+
+        .page-content {
+            text-align:left;
+        }
+    }
 }
