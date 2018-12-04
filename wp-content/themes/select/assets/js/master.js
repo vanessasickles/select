@@ -98,8 +98,10 @@
                 if(correctORnot === 'correct') {    
                     score++;
                     $('h2.answer-message').html("Correct!");
+                    $('h2.answer-message').addClass("correct");
                 } else {
                     $('h2.answer-message').html("Incorrect!");
+                    $('h2.answer-message').addClass("incorrect");
                 }
 
                 thisParent.hide();
