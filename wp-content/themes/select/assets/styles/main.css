@@ -1054,4 +1054,36 @@ footer {
     line-height: 1.2;
     padding: 0; }
 
+input[type=search] {
+  border: 0;
+  border-bottom: 1px solid #767676;
+  padding-bottom: 2px;
+  margin-right: 15px; }
+
+button[type=submit] {
+  border: 0;
+  display: none;
+  text-transform: lowercase;
+  line-height: 1.2;
+  padding: 0; }
+
+.search-no-results {
+  padding: 100px 40px;
+  text-align: center; }
+  .search-no-results h1 {
+    font-size: 26px;
+    margin-bottom: 20px; }
+
+h1.search-title {
+  font-size: 26px;
+  padding-top: 60px;
+  margin-bottom: 20px; }
+
+.page-404 {
+  padding: 100px 40px;
+  text-align: center; }
+  .page-404 h1 {
+    font-size: 26px;
+    margin-bottom: 20px; }
+
 /*# sourceMappingURL=main.css.map */
