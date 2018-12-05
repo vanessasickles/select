@@ -13,7 +13,7 @@
                 <div class="container">
                     <h1><?php the_title() ?></h1>
 
-                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="item-byline">
                             <span>by <a href="<?php the_author_link() ?>"><?php the_author() ?></a></span>
                             <span><?php the_date() ?></span>
@@ -25,10 +25,10 @@
 
         <div class="container">
             <?php 
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
-					get_template_part( 'content', get_post_format() );
-				endwhile; endif; 
-			?>
+                if (have_posts()) : while (have_posts()) : the_post();
+                    get_template_part('content', get_post_format());
+                endwhile; endif;
+            ?>
         </div>
 
         <div class="author-blurb">
@@ -45,23 +45,29 @@
 
                             <?php $author_id = get_the_author_meta('ID'); ?>
 
-                            <?php if(get_field('twitter', 'user_'.$author_id)) { ?>
+                            <?php if (get_field('twitter', 'user_'.$author_id)) {
+                ?>
                                 <a class="twitter-icon" href="<?php the_field('twitter', 'user_'.$author_id) ?>">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                            <?php }; ?>
+                            <?php
+            }; ?>
 
-                            <?php if(get_field('instagram', 'user_'.$author_id)) { ?>
+                            <?php if (get_field('instagram', 'user_'.$author_id)) {
+                ?>
                                 <a class="instagram-icon" href="<?php the_field('instagram', 'user_'.$author_id) ?>">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                            <?php }; ?>
+                            <?php
+            }; ?>
 
-                            <?php if(get_the_author_meta('user_email')) { ?>
+                            <?php if (get_the_author_meta('user_email')) {
+                ?>
                                 <a class="email-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>">
                                     <i class="far fa-envelope"></i>
                                 </a>
-                            <?php }; ?>
+                            <?php
+            }; ?>
                         </div>
                     </div>
 
@@ -77,9 +83,9 @@
             <span class="single-emphasis">Enjoy this article? Share it:</span>
             <div class="share-icons">
                 <a href="<?php echo get_permalink() ?>"><i class="fas fa-link"></i></a> 
-                <a class="email-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="far fa-envelope"></i></a> 
-                <a class="email-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="fab fa-facebook"></i></a> 
-                <a class="email-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="fab fa-twitter"></i></a>
+                <a class="share-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="far fa-envelope"></i></a> 
+                <a class="share-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="fab fa-facebook"></i></a> 
+                <a class="share-icon" href="mailto:<?php echo get_the_author_meta('user_email') ?>"><i class="fab fa-twitter"></i></a>
             </div>
 
             <span class="single-emphasis">Want more? Check out:</span>
@@ -97,11 +103,11 @@
                     'posts_per_page' => '2',
                 );
 
-                $the_query = new WP_Query( $args );
+                $the_query = new WP_Query($args);
 
-                if ( $the_query->have_posts() ) {
-                    while ( $the_query->have_posts() ) {
-                        $the_query->the_post();?>
+                if ($the_query->have_posts()) {
+                    while ($the_query->have_posts()) {
+                        $the_query->the_post(); ?>
                         
                         <div class="related-post post-tile">
                             <a href="<?php get_permalink() ?>" class="post-link"></a>
@@ -109,16 +115,16 @@
                                 <h3><?php the_title() ?></h3>
                             </div>
                             <?php 
-                                $post_id = get_the_ID(); 
-                                $featured_image = get_the_post_thumbnail($post_id, 'medium');
-                            ?>
+                                $post_id = get_the_ID();
+                        $featured_image = get_the_post_thumbnail($post_id, 'medium'); ?>
                             <div class="related-post-thumbnail fit-img">
                                 <?php echo $featured_image ?>
                                 <div class="vignette"></div>
                             </div>
                         </div>
 
-                    <?php }
+                    <?php
+                    }
                     wp_reset_postdata();
                 } ?>
         </div>

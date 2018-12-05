@@ -1,0 +1,60 @@
+.featured-vignette {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+body.featured-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  .main > .featured-container {
+    width: 45%;
+    margin-left: 40%;
+    padding: 100px 0px;
+    position: relative;
+
+    box-shadow: none;
+    background-color: transparent;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      color: #fff;
+      font-weight: bold;
+      font-size: 36px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      line-height: 1.2;
+
+      span {
+        color: $yellow;
+      }
+    }
+
+    .item-byline {
+      color: #dedede;
+      margin-top: 10px;
+    }
+
+    .content {
+      p {
+        color: #dedede;
+      }
+    }
+  }
+}
