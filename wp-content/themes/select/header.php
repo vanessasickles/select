@@ -31,7 +31,11 @@ $featured_bg = get_the_post_thumbnail_url($featured_bg_id, 'full');?>
     } else {
         echo 'default-bg';
     };
-?>"
+?> <?php 
+    if(is_user_logged_in()) {
+        echo 'logged-in';
+    };
+    ?>"
 style="<?php
     if (is_page_template('page-quiz.php') or is_page_template('featured-post.php')): {
         echo 'background-image:url(' . $featured_bg .')';

@@ -19,8 +19,10 @@ function main_scripts() {
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/styles/main.css' );
 	wp_enqueue_style( 'hamburgers', get_template_directory_uri() . '/assets/hamburgers/dist/hamburgers.css' );
 	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' );
+	
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'master', get_template_directory_uri() . '/assets/js/master.js');
+	wp_enqueue_script( 'interactive-quiz', get_template_directory_uri() . '/assets/js/quiz.js');
 }
 
 function swiper_scripts() {

@@ -36,6 +36,22 @@ body {
         box-shadow: 0 0 10px rgba(0,0,0,.4);
         background-color:#fff;
     }
+
+    .main {
+        margin-top:65px;
+    }
+    
+    &.logged-in {
+        main {
+            margin-top:40px;
+        }
+
+        nav {
+            @include screen(md) {
+                margin-top:32px;
+            }
+        }
+    }
 }
 
 html, body, div, span,
@@ -45,6 +61,7 @@ caption {
     padding:0;
     border:0;
     font-size:100%;
+    line-height:inherit;
 }
 
 p {
@@ -71,10 +88,6 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
-}
-
-.main {
-    margin-top:67px;
 }
 
 .container {
