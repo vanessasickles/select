@@ -6,10 +6,8 @@
     </div>
     <div class="item-content">
         <a href="<?php echo get_permalink() ?>"><h3><?php the_title(); ?></h3></a>
-        <div class="item-byline">
-            <span>by <a href="<?php the_author_link() ?>"><?php the_author() ?></a></span>
-            <span><?php the_date() ?></span>
-        </div>
+        
+        <?php get_template_part('partials/item-byline', get_post_format()); ?>
 
         <div class="item-excerpt">
             <?php 

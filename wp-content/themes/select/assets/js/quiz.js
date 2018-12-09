@@ -51,11 +51,11 @@
                     var correctORnot = $(this).data('answer');
                     if(correctORnot === 'correct') {    
                         score++; // Adds +1 to score on a correct answer
-                        $('h2.answer-message').html("Correct!");
-                        $('h2.answer-message').addClass("correct");
+                        $(thisParent.next()).find('h2.answer-message').html("Correct!");
+                        $(thisParent.next()).find('h2.answer-message').addClass("correct");
                     } else {
-                        $('h2.answer-message').html("Incorrect!");
-                        $('h2.answer-message').addClass("incorrect");
+                        $(thisParent.next()).find('h2.answer-message').html("Incorrect!");
+                        $(thisParent.next()).find('h2.answer-message').addClass("incorrect");
                     }
 
                     thisParent.hide();
@@ -64,11 +64,13 @@
                     var graphBars = $(thisParent.next()).find('div.quiz-bar'); // Select graph bars in next slide
                     
                     graphBars.each(function() { // for each graph bar, grab the % label for the bar and use it to determine the % width it's supposed to animate to
-                        var barValueCon = $(this).find('.bar-value');
-                        var width = barValueCon.html();
+                        var barValueCon = parseInt($(this).find('.bar-value').html());
+                        var graphCeiling = parseInt($(this).parent().parent().find('.graph-label.ceiling').html().replace('%',''));
+                        var width = (barValueCon / graphCeiling)*100;
+                        console.log(width);
 
                         $(this).animate({
-                            width: width
+                            width: width + '%',
                         }, 50, function(){});
 
                         $(this).find('.bar-value').fadeIn(1250);
@@ -129,14 +131,16 @@
                 $('.quiz-results h2').html("Gaming Motivations by Gender");
             } else {
                 var finalScore = (score/questionQuantity)*100;
-                $('.final-score').html(finalScore + '%');
+                $('.final-score').html(Math.round(finalScore) + '%');
             }
             
             var graphBars = $('.quiz-results').find('div.quiz-bar');
             
             graphBars.each(function() { // Get all of the graph bars and show + animate them
                 var barValueCon = $(this).find('.bar-value');
-                var width = barValueCon.html();
+                var graphCeiling = $(eventParent).find('graph-label.ceiling');
+                var width = barValueCon.html() / graphCeiling.html();
+                console.log(width);
 
                 $(this).animate({
                     width: width

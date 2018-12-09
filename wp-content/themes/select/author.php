@@ -1,24 +1,20 @@
 <?php get_header(); ?>
 
-<div class="main">
+<div class="main author-profile">
+    <div class="header-image">
+        <?php 
+            $author_id=$post->post_author;
+            $profile_banner_id = get_field('profile_banner', 'user_'.$author_id);
+            $profile_banner = wp_get_attachment_image($profile_banner_id, 'full');
+        ?>
+        <?php if($profile_banner) { 
+            
+            echo $profile_banner;
+        }; ?> 
+    </div>
+    <?php get_template_part( 'partials/author-blurb', get_post_format() ); ?>
     <div class="container archive-container">
-        <div class="tile-roll">
-            <?php 
-                $sticky = get_option( 'sticky_posts' );
-                $args = array(
-                    'cat' => $cat,
-                    'post__in' => $sticky,
-                    'ignore_sticky_posts' => 1,
-                    'p' => $sticky,
-                );
-                $sticky_posts = $query_name;
-                include(locate_template( 'partials/tile-loop.php', get_post_format() ));
-            ?>
-        </div>
         <div class="secondary-content">
-            <div class="archive header-bar">
-                <h1><?php echo wp_title(''); ?> articles</h1>
-            </div>
             <?php
                 $args = array(
                     'cat' => $cat,

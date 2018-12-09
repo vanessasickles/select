@@ -189,10 +189,29 @@
         }
 
 
-        .quiz-graph {
+        .quiz-graph-inner {
             border-left:2px solid #fff;
             border-bottom: 2px solid #fff;
+        }
+
+        .quiz-graph-outer {
             margin-bottom:100px;
+        }
+
+        .graph-label {
+            position:absolute;
+            margin-top:10px;
+            display:block;
+
+            &.floor {
+                left:0;
+                margin-right:auto;
+            }
+
+            &.ceiling {
+                right:0;
+                margin-left:auto;
+            }
         }
 
         .quiz-bar {

@@ -2,17 +2,28 @@
   overflow: hidden;
   width: 100%;
   max-height: 40%;
-  min-height:300px;
+  min-height:400px;
+
+  position:relative;
 
   background-color:$black;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  object-fit: cover;
+  object-position: 50% 50%;
+
   img {
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
+    min-height:100%;
+    width:auto;
+
+    @include screen(md) {
+      min-width:100%;
+      height:auto;
+      width:auto;
+    }
   }
 }
 
@@ -205,6 +216,32 @@
     padding-top: 30px;
     padding-bottom: 45px;
 
+    ul, li {
+      line-height:1.5;
+      font-weight:inherit;
+    }
+
+    h2 {
+      text-transform:none;
+      margin-bottom:10px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    h4 {
+      font-size:24px;
+    }
+
+    h5 {
+      font-size:20px;
+    }
+
+    h6 {
+      font-size:16px;
+    }
+
     p {
       margin-bottom: 18px;
       font-size: 18px;
@@ -214,6 +251,28 @@
       @include screen(md) {
         font-size: 16px;
         line-height: 1.5;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      min-width:100%;
+      height: auto;
+      margin:auto;
+    }
+
+    .wp-caption {
+      max-width:100%;
+
+      display:flex;
+      margin:auto;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      p {
+        padding: 20px 0 20px 0;
+        font-style:italic;
       }
     }
   }

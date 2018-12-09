@@ -11,6 +11,7 @@ $grey: #767676;
 // Mixins
 @import "mixins";
 
+// Stylesheets
 @import "base";
 @import "tiles";
 @import "navigation";
@@ -26,3 +27,4 @@ $grey: #767676;
 @import "searchform";
 @import "404";
 @import "featured-post";
+@import "author";

@@ -16,13 +16,14 @@
     if ($the_query->have_posts()) {
         while ($the_query->have_posts()) {
             $the_query->the_post(); ?>
+            <?php $post_id = get_the_ID();  ?>
             
             <div class="related-post post-tile">
 
-                <a href="<?php get_permalink() ?>" class="post-link"></a>
+                <a href="<?php echo get_the_permalink($post_id) ?>" class="post-link"></a>
 
                 <div class="tile-title">
-                    <h3><?php the_title() ?></h3>
+                    <h3><?php echo the_title() ?></h3>
                 </div>
 
                 <?php $post_id = get_the_ID();

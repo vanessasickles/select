@@ -68,7 +68,7 @@ body {
     body.logged-in nav {
       margin-top: 32px; } }
 
-html, body, div, span,
+html, body, div, span, strong, b, i, u,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 caption {
   margin: 0;
@@ -91,6 +91,9 @@ h3 {
   color: #3d3d3d;
   line-height: 1.2; }
 
+ul, ol, li {
+  line-height: inherit; }
+
 blockquote, q {
   quotes: none; }
 
@@ -110,6 +113,8 @@ q:before, q:after {
 a {
   text-decoration: none;
   color: #ffb600; }
+  a:hover {
+    text-decoration: underline; }
 
 .text-link {
   color: #3d3d3d;
@@ -770,7 +775,8 @@ footer {
   padding-bottom: 40px; }
   .pagination .page-numbers {
     color: #3d3d3d;
-    padding: 10px 3px; }
+    padding: 10px 3px;
+    line-height: inherit; }
   .pagination .current {
     color: #ffb600; }
   .pagination .next, .pagination .prev {
@@ -907,10 +913,21 @@ footer {
     .quiz-container .quiz-slide .quiz-back .answer-description, .quiz-container .quiz-opener .quiz-back .answer-description, .quiz-container .quiz-results .quiz-back .answer-description {
       font-size: 20px;
       font-weight: 300; }
-    .quiz-container .quiz-slide .quiz-graph, .quiz-container .quiz-opener .quiz-graph, .quiz-container .quiz-results .quiz-graph {
+    .quiz-container .quiz-slide .quiz-graph-inner, .quiz-container .quiz-opener .quiz-graph-inner, .quiz-container .quiz-results .quiz-graph-inner {
       border-left: 2px solid #fff;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid #fff; }
+    .quiz-container .quiz-slide .quiz-graph-outer, .quiz-container .quiz-opener .quiz-graph-outer, .quiz-container .quiz-results .quiz-graph-outer {
       margin-bottom: 100px; }
+    .quiz-container .quiz-slide .graph-label, .quiz-container .quiz-opener .graph-label, .quiz-container .quiz-results .graph-label {
+      position: absolute;
+      margin-top: 10px;
+      display: block; }
+      .quiz-container .quiz-slide .graph-label.floor, .quiz-container .quiz-opener .graph-label.floor, .quiz-container .quiz-results .graph-label.floor {
+        left: 0;
+        margin-right: auto; }
+      .quiz-container .quiz-slide .graph-label.ceiling, .quiz-container .quiz-opener .graph-label.ceiling, .quiz-container .quiz-results .graph-label.ceiling {
+        right: 0;
+        margin-left: auto; }
     .quiz-container .quiz-slide .quiz-bar, .quiz-container .quiz-opener .quiz-bar, .quiz-container .quiz-results .quiz-bar {
       height: 50px;
       background-color: white;
@@ -956,15 +973,22 @@ footer {
   overflow: hidden;
   width: 100%;
   max-height: 40%;
-  min-height: 300px;
+  min-height: 400px;
+  position: relative;
   background-color: #3d3d3d;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  object-fit: cover;
+  object-position: 50% 50%; }
   .header-image img {
-    min-width: 100%;
-    max-width: 100%;
-    height: auto; }
+    min-height: 100%;
+    width: auto; }
+    @media (min-width: 768px) {
+      .header-image img {
+        min-width: 100%;
+        height: auto;
+        width: auto; } }
 
 .single-bg h1 {
   font-size: 30px;
@@ -1098,6 +1122,20 @@ footer {
 .container .content {
   padding-top: 30px;
   padding-bottom: 45px; }
+  .container .content ul, .container .content li {
+    line-height: 1.5;
+    font-weight: inherit; }
+  .container .content h2 {
+    text-transform: none;
+    margin-bottom: 10px; }
+  .container .content h3 {
+    font-size: 28px; }
+  .container .content h4 {
+    font-size: 24px; }
+  .container .content h5 {
+    font-size: 20px; }
+  .container .content h6 {
+    font-size: 16px; }
   .container .content p {
     margin-bottom: 18px;
     font-size: 18px;
@@ -1107,6 +1145,21 @@ footer {
       .container .content p {
         font-size: 16px;
         line-height: 1.5; } }
+  .container .content img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    margin: auto; }
+  .container .content .wp-caption {
+    max-width: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .container .content .wp-caption p {
+      padding: 20px 0 20px 0;
+      font-style: italic; }
 
 .navigation-search {
   display: none; }
@@ -1196,6 +1249,8 @@ body.featured-bg {
     background: transparent;
     color: #fff;
     padding: 0; }
+    body.featured-bg .author-blurb .author-bio {
+      color: #c1c1c1; }
     body.featured-bg .author-blurb .container {
       width: 100%; }
   body.featured-bg .single-emphasis {
@@ -1236,16 +1291,30 @@ body.featured-bg {
       line-height: 1.2; }
       body.featured-bg .main > .featured-container h1 span {
         color: #ffb600; }
-    body.featured-bg .main > .featured-container blockquote p {
-      padding: 30px 0;
-      text-align: right;
-      font-weight: bold;
-      font-size: 35px;
-      line-height: 1.2; }
     body.featured-bg .main > .featured-container .item-byline {
       color: #dedede;
       margin-top: 10px; }
     body.featured-bg .main > .featured-container .content p {
       color: #dedede; }
+
+.container .content blockquote p {
+  padding: 30px 0;
+  text-align: right;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 1.2; }
+
+.author-profile .author-blurb {
+  margin-bottom: 0;
+  z-index: 1;
+  padding: 40px 10px; }
+  @media (min-width: 768px) {
+    .author-profile .author-blurb {
+      padding: 40px 40px; } }
+  @media (min-width: 1366px) {
+    .author-profile .author-blurb {
+      padding: 40px 0; } }
+.author-profile .archive-container {
+  padding-top: 40px; }
 
 /*# sourceMappingURL=main.css.map */

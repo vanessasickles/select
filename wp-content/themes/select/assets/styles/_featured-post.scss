@@ -32,6 +32,10 @@ body.featured-bg {
     color:#fff;
     padding:0;
 
+    .author-bio {
+      color:#c1c1c1;
+    }
+
     .container {
       width:100%;
     }
@@ -93,15 +97,6 @@ body.featured-bg {
       }
     }
 
-    blockquote p {
-      padding: 30px 0;
-      text-align: right;
-      font-weight:bold;
-      font-size:35px;
-      line-height:1.2;
-
-    }
-
     .item-byline {
       color: #dedede;
       margin-top: 10px;
@@ -113,4 +108,13 @@ body.featured-bg {
       }
     }
   }
+}
+
+.container .content blockquote p {
+  padding: 30px 0;
+  text-align: right;
+  font-weight:bold;
+  font-size:35px;
+  line-height:1.2;
+
 }

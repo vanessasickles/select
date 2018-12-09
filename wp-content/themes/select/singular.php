@@ -17,12 +17,9 @@
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php if(is_page()) { ?>
-                        <?php } else { ?>
-                            <div class="item-byline">
-                                <span>by <a href="<?php get_the_author_meta('user_url') ?>"><?php the_author() ?></a></span>
-                                <span><?php the_date() ?></span>
-                            </div>
-                        <?php } endwhile; endif; ?>
+                        <?php } else {
+                            get_template_part('partials/item-byline', get_post_format());
+                        } endwhile; endif; ?>
                     </div>
                 </div>
             </div>
@@ -38,9 +35,9 @@
 
         <?php if(is_page()) { ?>
         <?php } else { 
-            include(locate_template( 'partials/author-blurb.php', get_post_format() )); 
-            include(locate_template( 'partials/share-article.php', get_post_format() ));
-            include(locate_template( 'partials/related-posts.php', get_post_format() ));
+            get_template_part( 'partials/author-blurb', get_post_format() ); 
+            get_template_part( 'partials/share-article', get_post_format() );
+            get_template_part( 'partials/related-posts', get_post_format() );
             
         };?>
         

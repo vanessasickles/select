@@ -15,10 +15,7 @@
     <div class="container featured-container">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <h1><?php the_title() ?></h1>
-            <div class="item-byline">
-                <span>by <a href="<?php the_author_link() ?>"><?php the_author() ?></a></span>
-                <span><?php the_date() ?></span>
-            </div>
+            <?php get_template_part('partials/item-byline', get_post_format()); ?>
         <?php 
             get_template_part('content', get_post_format());
         endwhile; endif; ?>

@@ -1,0 +1,19 @@
+.author-profile {
+    .author-blurb {
+        margin-bottom:0;
+        z-index:1;
+        padding:40px 10px;
+        
+        @include screen(md) {
+            padding: 40px 40px;
+        }
+
+        @include screen(xl) {
+            padding: 40px 0;
+        }
+    }
+
+    .archive-container {
+        padding-top:40px;
+    }
+}

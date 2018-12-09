@@ -54,7 +54,7 @@ body {
     }
 }
 
-html, body, div, span,
+html, body, div, span, strong, b, i, u,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 caption {
     margin:0;
@@ -81,6 +81,10 @@ h3 {
     line-height:1.2;
 }
 
+ul,ol,li {
+    line-height:inherit;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -102,6 +106,9 @@ q:before, q:after {
 a {
     text-decoration:none;
     color:$yellow;
+    &:hover {
+        text-decoration:underline;
+    }
 }
 
 .text-link {

@@ -55,10 +55,7 @@
                     <div class="quiz-article">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                             <h2><?php the_title() ?></h2>
-                            <div class="item-byline">
-                                <span>by <a href="<?php the_author_link() ?>"><?php the_author() ?></a></span>
-                                <span><?php the_date() ?></span>
-                            </div>
+                            <?php get_template_part('partials/item-byline', get_post_format()); ?>
                             <div class="page-content">
                                 <?php get_template_part( 'content', get_post_format() ); ?>
                             </div>

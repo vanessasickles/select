@@ -8,7 +8,7 @@
             <div class="author-details">
                 <div class="author-container">
 
-                    <a class="author-nickname" href="<?php the_author_link() ?>"><?php echo get_the_author_meta('nickname') ?></a>
+                    <a class="author-nickname" href="<?php echo get_author_posts_url(get_the_author_meta( 'ID')) ?>"><?php the_author() ?></a>
 
                     <?php $author_id = get_the_author_meta('ID'); ?>
 
