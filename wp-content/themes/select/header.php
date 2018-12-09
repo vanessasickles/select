@@ -43,18 +43,6 @@ style="<?php
 ?>">
 
     <!-- Content Alert -->
-    <script>
-        (function($) {
-            $(document).ready(function() {
-                var alerted = localStorage.getItem('alerted') || '';
-                if (alerted != 'yes') {
-                    $(document).find('.content-alert').addClass('alerted');
-                    localStorage.setItem('alerted','yes');
-                }
-            })
-        }) (jQuery);
-    </script>
-
     <div class="content-alert">
         <div class="dark-bg"></div>
         <div class="alert">
