@@ -1,5 +1,16 @@
 (function($) {
     $(document).ready(function() {
+        // Content Alert - Lets people know that this is a student project, and I did not author the content
+        var alerted = localStorage.getItem('alerted') || '';
+        if (alerted != 'yes') {
+            $(document).find('.content-alert').addClass('alerted');
+            localStorage.setItem('alerted','yes');
+        }
+
+        $('.content-alert .alert-close').on('click', closeAlert);
+        function closeAlert() {
+            $('.content-alert').removeClass('alerted');
+        }
 
         // Category Colors - Decides the text color of the categories in the post rolls
         var $categories = [];

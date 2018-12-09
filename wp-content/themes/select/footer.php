@@ -15,9 +15,7 @@
 
             <div class="footer-col-3 flex flex-col items-center">
                 <div>
-                    <a href="" class="text-link">who we are</a>
-                    <a href="" class="text-link">careers</a>
-                    <a href="" class="text-link">magazine</a>
+                    <?php wp_nav_menu(array( 'theme_location' => 'footer_menu' ));?>
                 </div>
             </div>
 

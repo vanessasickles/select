@@ -14,6 +14,7 @@ add_image_size( 'archive-thumb', 700, 400, true );
 register_nav_menu('main_navigation', 'Main Navigation');
 register_nav_menu('footer_menu', 'Footer Menu');
 
+
 // Enqueue main scripts
 function main_scripts() {
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/styles/main.css' );

@@ -54,6 +54,7 @@ body {
     }
 }
 
+// Resets
 html, body, div, span, strong, b, i, u,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 caption {
@@ -63,6 +64,51 @@ caption {
     font-size:100%;
     line-height:inherit;
 }
+
+// Content Alert
+.content-alert {
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100vh;
+    z-index:0;
+
+    .alert-close {
+        color:$grey;
+        cursor:pointer;
+        font-size:30px;
+        position:absolute;
+        top:10px;
+        right:21px;
+    }
+
+    .dark-bg {
+        position:absolute;
+        right:0;
+        left:0;
+        bottom:0;
+        top:0;
+
+        background-color:rgba(0,0,0,0.8);
+        z-index:21;
+
+    }
+
+    .alert {
+        background-color:#fff;
+        max-width:50%;
+        padding:60px;
+        z-index:22;
+    }
+
+    &.alerted {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:21;
+    }
+}
+
 
 p {
     color: $grey;
