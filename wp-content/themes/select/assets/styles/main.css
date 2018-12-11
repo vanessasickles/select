@@ -82,7 +82,11 @@ caption {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 0; }
+  z-index: 0;
+  margin-top: -38px; }
+  @media (min-width: 768px) {
+    .content-alert {
+      margin-top: -19px; } }
   .content-alert .alert-close {
     color: #767676;
     cursor: pointer;
@@ -100,9 +104,15 @@ caption {
     z-index: 21; }
   .content-alert .alert {
     background-color: #fff;
-    max-width: 50%;
+    max-width: 90%;
     padding: 60px;
     z-index: 22; }
+    @media (min-width: 768px) {
+      .content-alert .alert {
+        max-width: 70%; } }
+    @media (min-width: 1024px) {
+      .content-alert .alert {
+        max-width: 50%; } }
   .content-alert.alerted {
     display: flex;
     justify-content: center;
