@@ -553,6 +553,8 @@ footer {
     font-size: 32px;
     text-transform: lowercase; }
 
+.sidebar .post-tile {
+  height: 200px; }
 .sidebar .see-all-bar {
   background-color: #A0A0A0;
   padding: 15px 20px;

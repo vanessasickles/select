@@ -67,7 +67,6 @@
                         var barValueCon = parseInt($(this).find('.bar-value').html());
                         var graphCeiling = parseInt($(this).parent().parent().find('.graph-label.ceiling').html().replace('%',''));
                         var width = (barValueCon / graphCeiling)*100;
-                        console.log(width);
 
                         $(this).animate({
                             width: width + '%',
@@ -117,8 +116,6 @@
             var eventTarget = $(event.target);
             var eventParent = eventTarget.parent();
 
-            console.log(parentOfParent);
-
             if(parentOfParent == true) {
                 eventParent.parent().hide();
             } else {
@@ -137,13 +134,14 @@
             var graphBars = $('.quiz-results').find('div.quiz-bar');
             
             graphBars.each(function() { // Get all of the graph bars and show + animate them
-                var barValueCon = $(this).find('.bar-value');
-                var graphCeiling = $(eventParent).find('graph-label.ceiling');
-                var width = barValueCon.html() / graphCeiling.html();
-                console.log(width);
+                var barValueCon = parseInt($(this).find('.bar-value').html());
+                var graphCeiling = parseInt($(this).parent().parent().find('.graph-label.ceiling').html().replace('%',''));
+                var width = (barValueCon / graphCeiling) * 100;
+
+                console.log(barValueCon);
 
                 $(this).animate({
-                    width: width
+                    width: width + '%',
                 }, 50, function(){});
 
                 $(this).find('.bar-value').fadeIn(1250);
