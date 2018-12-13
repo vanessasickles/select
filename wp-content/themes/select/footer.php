@@ -23,10 +23,10 @@
                 <div class="social-media">
                     <h4>Connect with Us</h4>
                     <a href="<?php echo site_url() ?>">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/twitter-logo.png" alt="Twitter Logo">
+                        <i class="fab fa-twitter"></i>
                     </a>
                     <a href="<?php echo site_url() ?>">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/instagram.png" alt="Instagram Logo">
+                        <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>

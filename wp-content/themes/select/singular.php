@@ -6,10 +6,12 @@
     ?>
 
     <div class="main">
-        <div class="header-image">
+        <div class="header-image fit-img">
             <?php if(has_post_thumbnail()) { 
                 echo $featured_image;
-            }; ?> 
+            } else { ?>
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/default-image.png">
+            <?php } ?> 
 
             <div class="tile-title">
                 <div class="container">

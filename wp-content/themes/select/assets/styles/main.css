@@ -459,17 +459,26 @@ footer {
       footer .footer-col-3 {
         width: 33.33%;
         margin: 0; } }
-  footer .social-media h4 {
-    color: #fff;
-    font-size: 25px;
-    text-transform: lowercase;
-    font-weight: normal;
-    margin-top: 5px;
-    margin-bottom: 10px; }
-  footer .social-media img {
-    height: 40px;
-    width: auto;
-    margin-right: 5px; }
+  footer .social-media {
+    font-size: 47px; }
+    footer .social-media a {
+      color: #fff;
+      transition: color .2s ease-in; }
+      footer .social-media a:hover {
+        text-decoration: none;
+        color: #ffb600;
+        transition: color .2s ease-in; }
+    footer .social-media h4 {
+      color: #fff;
+      font-size: 25px;
+      text-transform: lowercase;
+      font-weight: normal;
+      margin-top: 5px;
+      margin-bottom: 10px; }
+    footer .social-media img {
+      height: 40px;
+      width: auto;
+      margin-right: 5px; }
 
 .feature-banners {
   width: 100%;
@@ -550,7 +559,7 @@ footer {
   text-align: right;
   font-size: 16px;
   background-image: linear-gradient(to top, #F4F4F4 50%, #A0A0A0 50%); }
-  .sidebar .see-all-bar:hover {
+  .sidebar .see-all-bar:hover a {
     color: #3d3d3d; }
 
 .cta {
@@ -625,6 +634,7 @@ footer {
       cursor: pointer;
       align-self: end;
       margin-left: auto;
+      background-color: transparent;
       transition: background-color .3s, color .2s; }
       .cta .cta-form input[type=submit]:hover {
         color: #fff;
@@ -1019,24 +1029,10 @@ footer {
 
 .header-image {
   overflow: hidden;
-  width: 100%;
   max-height: 40%;
   min-height: 400px;
   position: relative;
-  background-color: #3d3d3d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  object-fit: cover;
-  object-position: 50% 50%; }
-  .header-image img {
-    min-height: 100%;
-    width: auto; }
-    @media (min-width: 768px) {
-      .header-image img {
-        min-width: 100%;
-        height: auto;
-        width: auto; } }
+  background-color: #3d3d3d; }
 
 .single-bg h1 {
   font-size: 30px;
@@ -1073,7 +1069,11 @@ footer {
   .author-blurb .container .author-info {
     flex: 1; }
   .author-blurb .author-avatar {
-    display: none; }
+    display: none;
+    border-radius: 100px;
+    overflow: hidden;
+    max-width: 90px;
+    max-height: 90px; }
     @media (min-width: 768px) {
       .author-blurb .author-avatar {
         display: block; } }

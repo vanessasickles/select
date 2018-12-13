@@ -84,6 +84,16 @@ footer {
     }
 
     .social-media {
+        font-size: 47px;
+        a {
+            color: #fff;
+            transition:color .2s ease-in;
+            &:hover {
+                text-decoration:none;
+                color: $yellow;
+                transition:color .2s ease-in;
+            }
+        }
         h4 {
             color:#fff;
             font-size:25px;

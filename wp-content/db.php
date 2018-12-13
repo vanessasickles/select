@@ -1,1 +1,0 @@
-/Users/vsickles1/select/wp-content/plugins/query-monitor/wp-content/db.php

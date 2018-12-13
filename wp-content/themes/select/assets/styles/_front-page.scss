@@ -114,7 +114,7 @@
 
         background-image: linear-gradient(to top, #F4F4F4 50%, #A0A0A0 50%);
 
-        &:hover {
+        &:hover a {
             color: $black;
         }
     }
@@ -227,6 +227,7 @@
 
             align-self:end;
             margin-left:auto;
+            background-color:transparent;
 
             transition: background-color .3s, color .2s;
             &:hover {
