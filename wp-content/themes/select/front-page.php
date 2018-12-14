@@ -78,22 +78,23 @@
                         <a href="<?php echo site_url() . '/category/news' ?>" class="text-link">see all news articles</a>
                     </div>
                     
-                    <!-- Featured Page Tile -->
-                    <div class="post-tile featured-page-tile">
-                        <?php $featured_page_link = get_field('featured_page');
-                        $featured_page_image = wp_get_attachment_image(get_field('featured_page_image'), 'medium');
-                        $featured_page_text = get_field('featured_page_text'); ?>
-
-                        <a class="post-link" href="<?php echo $featured_page_link ?>"></a>
-                        <div class="vignette"></div>
-                        <?php echo $featured_page_image ?>
-                        <div class="tile-title">
-                            <div class="tile-info">
-                                <a href="<?php echo $featured_page_link ?>"><h3><?php echo $featured_page_text ?></h3></a>
+                    <?php $featured_page_link = get_field('featured_page');
+                        $featured_page_image = wp_get_attachment_image(get_field('featured_page_image'), 'large');
+                        $featured_page_text = get_field('featured_page_text');
+                    
+                        if(isset($featured_page_link)) { ?>
+                            <div class="post-tile featured-page-tile">
+                                <a class="post-link" href="<?php echo $featured_page_link ?>"></a>
+                                <div class="vignette"></div>
+                                <?php echo $featured_page_image ?>
+                                <div class="tile-title">
+                                    <div class="tile-info">
+                                        <a href="<?php echo $featured_page_link ?>"><h3><?php echo $featured_page_text ?></h3></a>
+                                    </div>
+                                    <a class="tile-read-more" href="<?php echo $featured_page_link ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/arrow.svg"></a>
+                                </div>
                             </div>
-                            <a class="tile-read-more" href="<?php echo $featured_page_link ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/arrow.svg"></a>
-                        </div>
-                    </div>
+                        <?php }; ?>
 
                     <div class="header-bar">
                         <h2>Spotlights</h2>
